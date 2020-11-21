@@ -1,6 +1,6 @@
 extends Node
 
-var parent=get_parent()
+onready var parent=get_parent()
 
 #states 
 var state={}
