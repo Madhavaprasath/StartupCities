@@ -1,16 +1,22 @@
 extends Node2D
 
+export var wader_range=32
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var target_position=global_position
+onready var start_position=global_position
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	update_target_position()
+
+func update_target_position():
+	var target_Vector=Vector2(rand_range(-wader_range,wader_range),rand_range(-wader_range,wader_range))
+	target_position=start_position+target_Vector
+func check_for_timer():
+	return get_node("Timer").time_left
+
+func set_duration(duration):
+	get_node("Timer").start(duration)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Timer_timeout():
+	update_target_position()
