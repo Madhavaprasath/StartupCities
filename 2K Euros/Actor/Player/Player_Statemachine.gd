@@ -17,19 +17,23 @@ func _ready():
 	pass
 
 func state_logic(delta):
-	parent.apply_movement()
-	parent.Flip_character()
+	var movement = parent.apply_movement()
+	parent.flip_character(movement)
+	parent.rotate_aim()
 
 
 func transition(delta):
 	match current_state:
 		"Idle":
 			if parent.move_vector!=Vector2(0,0):
+				parent.current_animation = "Run"
 				return states[2]
 		"Run":
 			if parent.move_vector==Vector2(0,0):
+				parent.current_animation = "Idle"
 				return states[1]
 	return null
+	
 func animation(state):
 	match state:
 		"Idle":
@@ -51,13 +55,14 @@ func animation(state):
 			else:
 				parent.animation_player.play("Mage_Run")
 func _unhandled_input(event):
-	if event.is_action_pressed("click"):
-		if current_state=="Idle"&&parent.attacking==false:
-			if parent.groupname=="Cat"||parent.groupname=="Org"&&parent.groupname!="Player":
-				match parent.groupname:
-					"Cat":
-						parent.animation_player.play("Cat_Attack")
-					"Org":
-						parent.animation_player.play("Org_Attack")
-			elif parent.groupname=="Mage":
-				parent.animation_player.play("Mage_Attack")
+	if event.is_action_pressed("click") and parent.attacking==false:
+		parent.attacking = true
+		if parent.groupname=="Cat"||parent.groupname=="Org"&&parent.groupname!="Player":
+			match parent.groupname:
+				"Cat":
+					parent.animation_player.play("Cat_Attack")
+				"Org":
+					parent.animation_player.play("Org_Attack")
+		elif parent.groupname=="Mage":
+			parent.animation_player.play("Mage_Attack")
+			

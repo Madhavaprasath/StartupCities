@@ -2,18 +2,15 @@ extends KinematicBody2D
 
 # we can just call it with or stats
 
-
-
 var move_vector
 var Velocity=Vector2()
-var fliped 
+var current_animation = ""
 var attacking = false
 var groupname="Cat"
 var previous_group_name=null
 #cast variables
 onready var Body:Node2D=get_node("Body")
-
-
+onready var weapon_position = $Body/AnimatedSprite/Hold_position
 
 
 #stats
@@ -27,16 +24,10 @@ var player_interactables = []
 
 onready var animation_player:AnimationPlayer=get_node("Body/AnimatedSprite/AnimationPlayer")
 
-func _ready():
-	if groupname=="Player":
-			animation_player.play("Player_Idle")
-	elif groupname=="Cat":
-		animation_player.play("Cat_Idle")
-	elif groupname=="Org":
-		animation_player.play("Org_Idle")
-	else:
-		animation_player.play("Mage_Idle")
 
+func _ready():
+	current_animation = "Idle"	
+	animation_player.play(groupname + "_" + current_animation)
 
 
 func apply_movement():
@@ -51,21 +42,13 @@ func apply_movement():
 	if interact and player_interactables.size() > 0 :
 		var interactable = player_interactables[0]
 		interactable.trigger()
+	
+	return Vector2(x, y)
 
 
-
-func Flip_character():
-	var mouse_position=get_local_mouse_position()
-	if mouse_position.x>0:
-		fliped=1
-	elif mouse_position.x<0:
-		fliped=-1
-	else:
-		fliped=0
-	if fliped!=0:
-		Body.scale.x=fliped
-
-
+func flip_character(movement):
+	if movement.x != 0:
+		Body.scale.x= movement.x
 
 
 func getting_damaged(area):
@@ -76,6 +59,16 @@ func getting_damaged(area):
 		stats["health"]=100
 
 
-
 func _on_Player_hurtBox_area_entered(area):
 	getting_damaged(area)
+
+
+func rotate_aim():	
+	weapon_position.rotate(weapon_position.get_angle_to(get_global_mouse_position()))
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name in ["Cat_Attack", "Ogre_Attack", "Mage_Attack"]:
+		animation_player.play(groupname + "_" + current_animation)
+		attacking = false
+	pass # Replace with function body.
