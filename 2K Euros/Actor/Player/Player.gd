@@ -94,4 +94,5 @@ func getting_damaged(area):
 
 
 func _on_Player_hurtBox_area_entered(area):
-	getting_damaged(area)
+	if area.get("stats"):
+		getting_damaged(area)
