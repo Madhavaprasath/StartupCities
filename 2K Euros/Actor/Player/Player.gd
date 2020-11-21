@@ -30,9 +30,15 @@ var stats={
 	"Move_speed":150,
 	"attack_damage":20
 }
+
+var player_interactables = []
+
+
 func _ready():
 	#Check_for_outfit()
 	pass
+
+
 func apply_movement():
 	var y=-int(Input.is_action_pressed("Up"))+int(Input.is_action_pressed("Down"))
 	var x=int(Input.is_action_pressed("Right"))-int(Input.is_action_pressed("Left"))
@@ -40,6 +46,13 @@ func apply_movement():
 	Velocity.x=lerp(Velocity.x,stats["Move_speed"]*move_vector.x,0.1)
 	Velocity.y=lerp(Velocity.y,stats["Move_speed"]*move_vector.y,0.1)
 	Velocity=move_and_slide(Velocity,Vector2.UP)
+	
+	var interact = Input.is_action_just_pressed("Interact")
+	if interact and player_interactables.size() > 0 :
+		var interactable = player_interactables[0]
+		interactable.trigger()
+
+
 func Flip_character():
 	var mouse_position=get_local_mouse_position()
 	if mouse_position.x>0:
@@ -50,6 +63,8 @@ func Flip_character():
 		fliped=0
 	if fliped!=0:
 		Body.scale.x=fliped
+
+
 func Check_for_outfit():
 	match current_outfit:
 		player:
@@ -72,5 +87,7 @@ func Check_for_outfit():
 			meele.visible=false
 			Bow.visible=false
 			other.visible=true
+
+
 func getting_damaged():
 	pass

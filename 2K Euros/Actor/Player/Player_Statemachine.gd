@@ -11,9 +11,13 @@ func _init():
 		3:"staggered"
 	}
 	current_state=states[1]
+
+
 func state_logic(delta):
 	parent.apply_movement()
 	parent.Flip_character()
+
+
 func transition(delta):
 	match current_state:
 		"Idle":

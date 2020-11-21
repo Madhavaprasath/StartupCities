@@ -5,5 +5,4 @@
 [node name="Enemy outfit" type="Node2D"]
 
 [node name="icon" type="Sprite" parent="."]
-position = Vector2( 3, -3 )
 texture = ExtResource( 1 )
