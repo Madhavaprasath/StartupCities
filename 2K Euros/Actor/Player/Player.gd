@@ -9,21 +9,13 @@ var Velocity=Vector2()
 var fliped 
 var attacking = false
 var groupname="Player"
-
+var previous_group_name=null
 #cast variables
-onready var Player:Node2D= get_node("Body/Player_outfit")
-onready var meele:Node2D=get_node("Body/Enemy outfit")
-onready var Bow:Node2D=get_node("Body/Enemy outfit2")
-onready var other:Node2D=get_node("Body/Enemy outfit3")
 onready var Body:Node2D=get_node("Body")
 
-enum{
-	player_outfit,
-	meele_outfit,
-	Bow_outfit,
-	otherenemies_outfit
-}
-var current_outfit=player_outfit
+
+
+
 #stats
 var stats={
 	"health":100,
@@ -54,45 +46,22 @@ func apply_movement():
 func Flip_character():
 	var mouse_position=get_local_mouse_position()
 	if mouse_position.x>0:
-		fliped=-1
-	elif mouse_position.x<0:
 		fliped=1
+	elif mouse_position.x<0:
+		fliped=-1
 	else:
 		fliped=0
 	if fliped!=0:
 		Body.scale.x=fliped
 
 
-func Check_for_outfit():
-	match current_outfit:
-		player_outfit:
-			Player.visible=true
-			meele.visible=false
-			Bow.visible=false
-			other.visible=false
-		meele_outfit:
-			Player.visible=false
-			meele.visible=true
-			Bow.visible=false
-			other.visible=false
-		Bow_outfit:
-			Player.visible=false
-			meele.visible=false
-			Bow.visible=true
-			other.visible=false
-		otherenemies_outfit:
-			Player.visible=false
-			meele.visible=false
-			Bow.visible=false
-			other.visible=true
-
 
 func getting_damaged(area):
 	stats["health"]-=area.stats["damage"]
 	if stats["health"]==0:
+		previous_group_name=groupname
 		groupname=area.groupname
 
 
 func _on_Player_hurtBox_area_entered(area):
-	if area.get("stats"):
-		getting_damaged(area)
+	getting_damaged(area)

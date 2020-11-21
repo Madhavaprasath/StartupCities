@@ -1,5 +1,7 @@
 extends "res://Actor/Statemachines/StateMachines.gd"
 
+
+onready var animation_player=parent.Body
 func _init():
 	states={
 		1:"Idle",
@@ -11,6 +13,7 @@ func _init():
 		3:"staggered"
 	}
 	current_state=states[1]
+
 
 
 func state_logic(delta):
@@ -30,19 +33,10 @@ func transition(delta):
 func animation(state):
 	match state:
 		"Idle":
-			parent.Player.get_node("AnimationPlayer").play("Idle")
+			pass
 		"Run":
-			parent.Player.get_node("AnimationPlayer").play("Run")
+			pass
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
 		if current_state=="Idle"&&parent.attacking==false:
-			if parent.current_outfit==parent.Bow_outfit:
-				parent.attacking=true
-				#shoot
-				yield(get_tree().create_timer(0.5),"timeout")
-				parent.attacking=false
-			else:
-				parent.attacking=true
-				print("hi")
-				yield(get_tree().create_timer(0.5),"timeout")
-				parent.attacking=false
+			pass
