@@ -1,5 +1,5 @@
 extends Node
-class_name Statemachines
+class_name Statemachine
 
 var parent=get_parent()
 
