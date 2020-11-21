@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+
+var group_name="Enemy"
 const accerlation=200
 enum {
 	Idle,
@@ -61,7 +63,7 @@ func shuffle_array(arrays):
 	arrays.shuffle()
 	return arrays.pop_front()
 func attack():
-	print("i will kll you ")
+	pass
 func flip_character():
 	if velocity.x>0:
 		Body.scale.x=1

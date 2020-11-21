@@ -8,6 +8,7 @@ var move_vector
 var Velocity=Vector2()
 var fliped 
 var attacking = false
+var groupname="Player"
 
 #cast variables
 onready var Player_outfit:Node2D= get_node("Body/Player_outfit")
@@ -36,8 +37,6 @@ var player_interactables = []
 func _ready():
 	#Check_for_outfit()
 	pass
-
-
 func apply_movement():
 	var y=-int(Input.is_action_pressed("Up"))+int(Input.is_action_pressed("Down"))
 	var x=int(Input.is_action_pressed("Right"))-int(Input.is_action_pressed("Left"))
@@ -88,5 +87,11 @@ func Check_for_outfit():
 			other.visible=true
 
 
-func getting_damaged():
-	pass
+func getting_damaged(area):
+	stats["health"]-=area.stats["damage"]
+	if stats["health"]==0:
+		groupname=area.groupname
+
+
+func _on_Player_hurtBox_area_entered(area):
+	getting_damaged(area)

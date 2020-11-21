@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Outfits/Enemy outfit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Actor/Player/Player.gd" type="Script" id=2]
@@ -6,9 +6,14 @@
 [ext_resource path="res://Outfits/Enemy outfit2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Outfits/Enemy outfit3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actor/Player/Player_Statemachine.gd" type="Script" id=6]
+[ext_resource path="res://Actor/HitboxandHurtboxes/Hitbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Actor/HitboxandHurtboxes/HurtBox.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 26.7722, 25.875 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Players",
@@ -53,3 +58,16 @@ limit_left = 0
 limit_top = 0
 limit_right = 512
 limit_bottom = 300
+
+[node name="Player_hitbox" parent="." instance=ExtResource( 7 )]
+
+[node name="Player_hurtBox" parent="." instance=ExtResource( 8 )]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D" parent="Player_hurtBox" index="0"]
+shape = SubResource( 2 )
+[connection signal="area_entered" from="Player_hurtBox" to="." method="_on_Player_hurtBox_area_entered"]
+
+[editable path="Player_hitbox"]
+
+[editable path="Player_hurtBox"]
