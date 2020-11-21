@@ -73,4 +73,4 @@ func Check_for_outfit():
 			Bow.visible=false
 			other.visible=true
 func getting_damaged():
-	
+	pass

@@ -26,3 +26,11 @@ script = ExtResource( 6 )
 [node name="Enemy outfit2" type="Node2D" parent="Body" instance=ExtResource( 4 )]
 
 [node name="Enemy outfit3" type="Node2D" parent="Body" instance=ExtResource( 5 )]
+
+[node name="AudioLibrary" type="Node2D" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="AudioLibrary"]
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="AudioLibrary"]
+
+[node name="Run" type="AudioStreamPlayer2D" parent="AudioLibrary"]

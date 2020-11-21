@@ -3,17 +3,22 @@ extends Node
 onready var parent=get_parent()
 
 #states 
-var state={}
+var states={}
 var current_state 
 
 func _physics_process(delta):
 	state_logic(delta)
 	var state=transition(delta)
 	if state!=null:
+		print(state)
 		animation(state)
+		audio(state)
+		current_state=state
 func state_logic(delta):
 	pass
 func transition(delta):
 	return null
 func animation(state,current_outfit=null):
+	pass
+func audio(state):
 	pass
