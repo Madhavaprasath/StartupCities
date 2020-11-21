@@ -6,6 +6,9 @@ onready var player_spawn_point = $PlayerSpawnPoint
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	AudioManager.change_state("stage")
+	
 	var player = player_scn.instance()
 	add_child(player)
 	
