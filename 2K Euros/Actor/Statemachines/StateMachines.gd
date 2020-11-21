@@ -1,5 +1,4 @@
 extends Node
-class_name Statemachine
 
 var parent=get_parent()
 
@@ -16,5 +15,5 @@ func state_logic(delta):
 	pass
 func transition(delta):
 	return null
-func animation(state):
+func animation(state,current_outfit=null):
 	pass
