@@ -1,14 +1,13 @@
 extends KinematicBody2D
 
 # we can just call it with or stats
-const Move_speed=250
 
 
 
 var move_vector
 var Velocity=Vector2()
 var fliped 
-
+var attacking = false
 
 #cast variables
 onready var Player_outfit:Node2D= get_node("Body/Player_outfit")
