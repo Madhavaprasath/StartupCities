@@ -1,11 +1,10 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Stages/Interactables/Chest/Chest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Stages/Interactables/Door/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Temp/dungeon_sheet.png" type="Texture" id=3]
 [ext_resource path="res://Stages/Stage1/Stage.gd" type="Script" id=4]
 [ext_resource path="res://Stages/Collectibles/Key/Key.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Actor/Enemies/Enemy.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "dungeon_sheet.png 0"
@@ -619,9 +618,6 @@ points = PoolVector2Array( 16, 10.9688, 4.13094, 10.9688, 4.02276, 0, 16, 0 )
 } ]
 26/z_index = 0
 
-[sub_resource type="CircleShape2D" id=26]
-radius = 70.695
-
 [node name="Stage" type="Node2D"]
 script = ExtResource( 4 )
 
@@ -664,21 +660,3 @@ collectible = true
 
 [node name="PlayerSpawnPoint" type="Position2D" parent="."]
 position = Vector2( 449, 245 )
-
-[node name="Enemy" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 317.314, 240.106 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="WanderControler" parent="Enemy" index="2"]
-wader_range = 16
-
-[node name="PlayerActtack Zone" parent="Enemy" index="3"]
-position = Vector2( -0.629974, -0.629944 )
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" parent="Enemy/PlayerActtack Zone" index="0"]
-shape = SubResource( 26 )
-
-[editable path="Enemy"]

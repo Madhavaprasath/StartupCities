@@ -8,7 +8,7 @@ var move_vector
 var Velocity=Vector2()
 var fliped 
 var attacking = false
-var groupname="Player"
+var groupname="Cat"
 var previous_group_name=null
 #cast variables
 onready var Body:Node2D=get_node("Body")
@@ -19,16 +19,26 @@ onready var Body:Node2D=get_node("Body")
 #stats
 var stats={
 	"health":100,
-	"Move_speed":150,
+	"Move_speed":50,
 	"attack_damage":20
 }
 
 var player_interactables = []
 
+onready var animation_player:AnimationPlayer=get_node("Body/AnimatedSprite/AnimationPlayer")
 
 func _ready():
-	#Check_for_outfit()
-	pass
+	if groupname=="Player":
+			animation_player.play("Player_Idle")
+	elif groupname=="Cat":
+		animation_player.play("Cat_Idle")
+	elif groupname=="Org":
+		animation_player.play("Org_Idle")
+	else:
+		animation_player.play("Mage_Idle")
+
+
+
 func apply_movement():
 	var y=-int(Input.is_action_pressed("Up"))+int(Input.is_action_pressed("Down"))
 	var x=int(Input.is_action_pressed("Right"))-int(Input.is_action_pressed("Left"))
@@ -41,6 +51,7 @@ func apply_movement():
 	if interact and player_interactables.size() > 0 :
 		var interactable = player_interactables[0]
 		interactable.trigger()
+
 
 
 func Flip_character():
@@ -56,11 +67,14 @@ func Flip_character():
 
 
 
+
 func getting_damaged(area):
 	stats["health"]-=area.stats["damage"]
-	if stats["health"]==0:
+	if stats["health"]<=0:
 		previous_group_name=groupname
 		groupname=area.groupname
+		stats["health"]=100
+
 
 
 func _on_Player_hurtBox_area_entered(area):

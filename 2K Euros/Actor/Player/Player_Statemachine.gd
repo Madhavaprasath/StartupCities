@@ -1,7 +1,6 @@
 extends "res://Actor/Statemachines/StateMachines.gd"
 
 
-onready var animation_player=parent.Body
 func _init():
 	states={
 		1:"Idle",
@@ -14,7 +13,8 @@ func _init():
 	}
 	current_state=states[1]
 
-
+func _ready():
+	pass
 
 func state_logic(delta):
 	parent.apply_movement()
@@ -33,10 +33,31 @@ func transition(delta):
 func animation(state):
 	match state:
 		"Idle":
-			pass
+			if parent.groupname=="Player":
+				parent.animation_player.play("Player_Idle")
+			elif parent.groupname=="Cat":
+				parent.animation_player.play("Cat_Idle")
+			elif parent.groupname=="Org":
+				parent.animation_player.play("Org_Idle")
+			else:
+				parent.animation_player.play("Mage_Idle")
 		"Run":
-			pass
+			if parent.groupname=="Player":
+				parent.animation_player.play("Player_Run")
+			elif parent.groupname=="Cat":
+				parent.animation_player.play("Cat_Run")
+			elif parent.groupname=="Org":
+				parent.animation_player.play("Org_Run")
+			else:
+				parent.animation_player.play("Mage_Run")
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
 		if current_state=="Idle"&&parent.attacking==false:
-			pass
+			if parent.groupname=="Cat"||parent.groupname=="Org"&&parent.groupname!="Player":
+				match parent.groupname:
+					"Cat":
+						parent.animation_player.play("Cat_Attack")
+					"Org":
+						parent.animation_player.play("Org_Attack")
+			elif parent.groupname=="Mage":
+				parent.animation_player.play("Mage_Attack")
