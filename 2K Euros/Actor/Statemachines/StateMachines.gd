@@ -18,7 +18,7 @@ func state_logic(delta):
 	pass
 func transition(delta):
 	return null
-func animation(state,current_outfit=null):
+func animation(state):
 	pass
 func audio(state):
 	pass

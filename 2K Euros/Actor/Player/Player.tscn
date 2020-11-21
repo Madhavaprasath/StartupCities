@@ -9,16 +9,16 @@
 [ext_resource path="res://Actor/HitboxandHurtboxes/Hitbox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Actor/HitboxandHurtboxes/HurtBox.tscn" type="PackedScene" id=8]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 13.0115
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 26.7722, 25.875 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 13.9654
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Players",
 ]]
-scale = Vector2( 0.33, 0.33 )
+scale = Vector2( 0.4, 0.4 )
 collision_layer = 2
 collision_mask = 113
 script = ExtResource( 2 )
@@ -60,11 +60,17 @@ limit_right = 512
 limit_bottom = 300
 
 [node name="Player_hitbox" parent="." instance=ExtResource( 7 )]
+collision_layer = 8
+collision_mask = 64
 
 [node name="Player_hurtBox" parent="." instance=ExtResource( 8 )]
 scale = Vector2( 1, 1 )
+collision_layer = 4
+collision_mask = 32
 
 [node name="CollisionShape2D" parent="Player_hurtBox" index="0"]
+visible = false
+position = Vector2( 9.53674e-06, 1.40307 )
 shape = SubResource( 2 )
 [connection signal="area_entered" from="Player_hurtBox" to="." method="_on_Player_hurtBox_area_entered"]
 

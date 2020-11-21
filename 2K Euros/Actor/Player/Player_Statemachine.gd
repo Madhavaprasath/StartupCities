@@ -27,7 +27,12 @@ func transition(delta):
 			if parent.move_vector==Vector2(0,0):
 				return states[1]
 	return null
-	
+func animation(state):
+	match state:
+		"Idle":
+			parent.Player.get_node("AnimationPlayer").play("Idle")
+		"Run":
+			parent.Player.get_node("AnimationPlayer").play("Run")
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
 		if current_state=="Idle"&&parent.attacking==false:

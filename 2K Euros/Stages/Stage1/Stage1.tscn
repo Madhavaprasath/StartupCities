@@ -666,6 +666,7 @@ collectible = true
 position = Vector2( 449, 245 )
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 317.314, 240.106 )
 scale = Vector2( 0.5, 0.5 )
 

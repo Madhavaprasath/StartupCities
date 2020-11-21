@@ -11,19 +11,19 @@ var attacking = false
 var groupname="Player"
 
 #cast variables
-onready var Player_outfit:Node2D= get_node("Body/Player_outfit")
+onready var Player:Node2D= get_node("Body/Player_outfit")
 onready var meele:Node2D=get_node("Body/Enemy outfit")
 onready var Bow:Node2D=get_node("Body/Enemy outfit2")
 onready var other:Node2D=get_node("Body/Enemy outfit3")
 onready var Body:Node2D=get_node("Body")
 
 enum{
-	player,
+	player_outfit,
 	meele_outfit,
 	Bow_outfit,
 	otherenemies_outfit
 }
-var current_outfit=player
+var current_outfit=player_outfit
 #stats
 var stats={
 	"health":100,
@@ -54,9 +54,9 @@ func apply_movement():
 func Flip_character():
 	var mouse_position=get_local_mouse_position()
 	if mouse_position.x>0:
-		fliped=1
-	elif mouse_position.x<0:
 		fliped=-1
+	elif mouse_position.x<0:
+		fliped=1
 	else:
 		fliped=0
 	if fliped!=0:
@@ -65,23 +65,23 @@ func Flip_character():
 
 func Check_for_outfit():
 	match current_outfit:
-		player:
-			Player_outfit.visible=true
+		player_outfit:
+			Player.visible=true
 			meele.visible=false
 			Bow.visible=false
 			other.visible=false
 		meele_outfit:
-			Player_outfit.visible=false
+			Player.visible=false
 			meele.visible=true
 			Bow.visible=false
 			other.visible=false
 		Bow_outfit:
-			Player_outfit.visible=false
+			Player.visible=false
 			meele.visible=false
 			Bow.visible=true
 			other.visible=false
 		otherenemies_outfit:
-			Player_outfit.visible=false
+			Player.visible=false
 			meele.visible=false
 			Bow.visible=false
 			other.visible=true
