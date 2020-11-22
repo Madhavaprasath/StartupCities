@@ -10,6 +10,7 @@ var current_animation = ""
 var attacking = false
 var groupname="Ogre"
 var previous_group_name=null
+var can_move = false
 onready var character_sprite = $Body/CharacterSprite
 onready var weapon_position = $Body/Hold_position
 onready var fireball_spawn_point = $Body/Hold_position/Sprite/FireballSpawnPoint
@@ -23,7 +24,7 @@ var morph_list = ["Ogre", "Cat", "Mage", "Player"]
 
 #stats
 var health=100
-var move_speed=10
+var move_speed=150
 var damage=150
 
 var player_interactables = []
@@ -78,6 +79,7 @@ func camera_snap():
 			camera.limit_right = area.position.x + 512 * area.scale.x
 			camera.limit_top = area.position.y
 			camera.limit_bottom = area.position.y + 320 * area.scale.y
+			EventManager.emit_signal("move_hud", area.position) 
 
 
 func getting_damaged(area):

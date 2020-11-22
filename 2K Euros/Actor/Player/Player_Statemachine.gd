@@ -17,6 +17,9 @@ func _ready():
 	pass
 
 func state_logic(delta):
+	parent.camera_snap()
+	if !parent.can_move: return
+	
 	var movement = parent.apply_movement()
 	parent.flip_character(movement)
 	parent.rotate_aim()

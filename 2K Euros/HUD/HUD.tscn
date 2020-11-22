@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/BitPotionExt.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 74
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 38
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Floor:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -130, 116 ), Vector2( 152, 116 ), Vector2( 152, 116 ), Vector2( -130, 116 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Number:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 530, 116 ), Vector2( 308, 116 ), Vector2( 308, 116 ), Vector2( 530, 116 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Title:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.9, 2.2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 53, 329 ), Vector2( 50, 168 ), Vector2( 50, 168 ), Vector2( 53, 329 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Time:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 420, -46 ), Vector2( 420, -46 ), Vector2( 419, 12 ) ]
+}
+
+[node name="HUD" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Floor" type="Label" parent="."]
+margin_left = -130.0
+margin_top = 116.0
+margin_right = -14.9997
+margin_bottom = 249.0
+custom_fonts/font = SubResource( 1 )
+text = "FLOOR
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="."]
+margin_left = 530.0
+margin_top = 116.0
+margin_right = 641.0
+margin_bottom = 249.0
+custom_fonts/font = SubResource( 1 )
+text = "1
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 53.0
+margin_top = 329.0
+margin_right = 462.0
+margin_bottom = 462.0
+custom_fonts/font = SubResource( 2 )
+text = "The cat moves in mysterious ways..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="."]
+margin_left = 420.0
+margin_top = -46.0
+margin_right = 503.0
+margin_bottom = -8.0
+custom_fonts/font = SubResource( 2 )
+text = "00 : 00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show_floor = SubResource( 3 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
