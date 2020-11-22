@@ -231,8 +231,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=42]
-radius = 8.224
-height = 13.0197
+radius = 6.12173
+height = 10.1291
 
 [sub_resource type="CircleShape2D" id=43]
 radius = 7.70912
@@ -267,7 +267,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Hold_position/Sprite:animation")
+tracks/2/path = NodePath("../Hold_position/Sprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -279,7 +279,7 @@ tracks/2/keys = {
 "values": [ "Cat_swing" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Hold_position/Sprite:frame")
+tracks/3/path = NodePath("../Hold_position/Sprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -327,7 +327,7 @@ tracks/6/keys = {
 "values": [ SubResource( 43 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Hold_position/Sprite:position")
+tracks/7/path = NodePath("../Hold_position/Sprite:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -375,7 +375,7 @@ tracks/10/keys = {
 "values": [ Vector2( -0.339956, 8.39611 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:shape")
+tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -387,7 +387,7 @@ tracks/11/keys = {
 "values": [ SubResource( 42 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:disabled")
+tracks/12/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:disabled")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -399,7 +399,7 @@ tracks/12/keys = {
 "values": [ true, false, true ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:shape:radius")
+tracks/13/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:radius")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -411,7 +411,7 @@ tracks/13/keys = {
 "values": [ 6.12173 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:shape:height")
+tracks/14/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:height")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -423,7 +423,7 @@ tracks/14/keys = {
 "values": [ 10.1291 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:position")
+tracks/15/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -463,7 +463,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Hold_position/Sprite:animation")
+tracks/2/path = NodePath("../Hold_position/Sprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -475,7 +475,7 @@ tracks/2/keys = {
 "values": [ "Cat_Idle" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Hold_position/Sprite:frame")
+tracks/3/path = NodePath("../Hold_position/Sprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -523,7 +523,7 @@ tracks/6/keys = {
 "values": [ Vector2( 0.147476, 8.25891 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Hold_position/Sprite:position")
+tracks/7/path = NodePath("../Hold_position/Sprite:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -599,7 +599,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Hold_position/Sprite:animation")
+tracks/2/path = NodePath("../Hold_position/Sprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -611,7 +611,7 @@ tracks/2/keys = {
 "values": [ "Cat_Idle" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Hold_position/Sprite:frame")
+tracks/3/path = NodePath("../Hold_position/Sprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -659,7 +659,7 @@ tracks/6/keys = {
 "values": [ Vector2( 0.147476, 8.25891 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Hold_position/Sprite:position")
+tracks/7/path = NodePath("../Hold_position/Sprite:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -734,7 +734,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Hold_position/Sprite:animation")
+tracks/2/path = NodePath("../Hold_position/Sprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -746,7 +746,7 @@ tracks/2/keys = {
 "values": [ "Mage_Swing" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Hold_position/Sprite:frame")
+tracks/3/path = NodePath("../Hold_position/Sprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -758,7 +758,7 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Hold_position/Sprite:position")
+tracks/4/path = NodePath("../Hold_position/Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -842,7 +842,7 @@ tracks/10/keys = {
 "values": [ Vector2( -0.208563, 4.32304 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:shape")
+tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -858,7 +858,7 @@ tracks/11/keys = {
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Hold_position/Sprite:position")
+tracks/0/path = NodePath("../Hold_position/Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -870,7 +870,7 @@ tracks/0/keys = {
 "values": [ Vector2( 4.95443, -4.02723 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Hold_position/Sprite:animation")
+tracks/1/path = NodePath("../Hold_position/Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -882,7 +882,7 @@ tracks/1/keys = {
 "values": [ "mage_Idle" ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Hold_position/Sprite:frame")
+tracks/2/path = NodePath("../Hold_position/Sprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1018,7 +1018,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Hold_position/Sprite:animation")
+tracks/2/path = NodePath("../Hold_position/Sprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1030,7 +1030,7 @@ tracks/2/keys = {
 "values": [ "mage_Idle" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Hold_position/Sprite:position")
+tracks/3/path = NodePath("../Hold_position/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1042,7 +1042,7 @@ tracks/3/keys = {
 "values": [ Vector2( 4.95443, -4.02723 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Hold_position/Sprite:frame")
+tracks/4/path = NodePath("../Hold_position/Sprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1154,7 +1154,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Hold_position/Sprite:animation")
+tracks/2/path = NodePath("../Hold_position/Sprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1166,7 +1166,7 @@ tracks/2/keys = {
 "values": [ "Orc_Swing" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Hold_position/Sprite:frame")
+tracks/3/path = NodePath("../Hold_position/Sprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1178,7 +1178,7 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3, 0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Hold_position/Sprite:position")
+tracks/4/path = NodePath("../Hold_position/Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1262,7 +1262,7 @@ tracks/10/keys = {
 "values": [ Vector2( -2.50281, 3.90591 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:disabled")
+tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:disabled")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1274,7 +1274,7 @@ tracks/11/keys = {
 "values": [ true, false, true, true ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:shape:radius")
+tracks/12/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:radius")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -1286,7 +1286,7 @@ tracks/12/keys = {
 "values": [ 8.224 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:shape:height")
+tracks/13/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:height")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1298,7 +1298,7 @@ tracks/13/keys = {
 "values": [ 13.0197 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:position")
+tracks/14/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -1339,7 +1339,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Hold_position/Sprite:position")
+tracks/2/path = NodePath("../Hold_position/Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1351,7 +1351,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.153755, -4.02723 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Hold_position/Sprite:animation")
+tracks/3/path = NodePath("../Hold_position/Sprite:animation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1363,7 +1363,7 @@ tracks/3/keys = {
 "values": [ "Orc_Idle" ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Hold_position/Sprite:frame")
+tracks/4/path = NodePath("../Hold_position/Sprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1452,7 +1452,7 @@ resource_name = "Ogre_Run"
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Hold_position/Sprite:animation")
+tracks/0/path = NodePath("../Hold_position/Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1464,7 +1464,7 @@ tracks/0/keys = {
 "values": [ "Orc_Idle" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Hold_position/Sprite:frame")
+tracks/1/path = NodePath("../Hold_position/Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1500,7 +1500,7 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Hold_position/Sprite:position")
+tracks/4/path = NodePath("../Hold_position/Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1648,7 +1648,7 @@ tracks/4/keys = {
 "values": [ 12.3104 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Hold_position/Sprite:animation")
+tracks/5/path = NodePath("../Hold_position/Sprite:animation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1660,7 +1660,7 @@ tracks/5/keys = {
 "values": [ "Player_Idle" ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Hold_position/Sprite:frame")
+tracks/6/path = NodePath("../Hold_position/Sprite:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1672,7 +1672,7 @@ tracks/6/keys = {
 "values": [ 0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Hold_position/Sprite:position")
+tracks/7/path = NodePath("../Hold_position/Sprite:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1720,7 +1720,7 @@ tracks/10/keys = {
 "values": [ SubResource( 44 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:shape")
+tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1796,7 +1796,7 @@ tracks/4/keys = {
 "values": [ 12.3104 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Hold_position/Sprite:animation")
+tracks/5/path = NodePath("../Hold_position/Sprite:animation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1808,7 +1808,7 @@ tracks/5/keys = {
 "values": [ "Player_Idle" ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Hold_position/Sprite:frame")
+tracks/6/path = NodePath("../Hold_position/Sprite:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1820,7 +1820,7 @@ tracks/6/keys = {
 "values": [ 0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Hold_position/Sprite:position")
+tracks/7/path = NodePath("../Hold_position/Sprite:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1868,7 +1868,7 @@ tracks/10/keys = {
 "values": [ Vector2( 9.53674e-06, 1.40307 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Hold_position/Player_hitbox/CollisionShape2D:shape")
+tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1988,11 +1988,11 @@ script = ExtResource( 2 )
 
 [node name="Body" type="Node2D" parent="."]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Body"]
+[node name="CharacterSprite" type="AnimatedSprite" parent="Body"]
 frames = SubResource( 41 )
-animation = "Org_attack"
+animation = "Mage_attack"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Body/AnimatedSprite"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body/CharacterSprite"]
 anims/Cat_Attack = SubResource( 45 )
 anims/Cat_Idle = SubResource( 46 )
 anims/Cat_Run = SubResource( 47 )
@@ -2005,19 +2005,23 @@ anims/Ogre_Run = SubResource( 53 )
 anims/Player_Idle = SubResource( 54 )
 anims/Player_Run = SubResource( 55 )
 
-[node name="Hold_position" type="Position2D" parent="Body/AnimatedSprite"]
+[node name="Hold_position" type="Position2D" parent="Body"]
 position = Vector2( 0, 6.5 )
+scale = Vector2( 1, 1 )
 
-[node name="Player_hitbox" parent="Body/AnimatedSprite/Hold_position" instance=ExtResource( 7 )]
+[node name="Player_hitbox" parent="Body/Hold_position" instance=ExtResource( 7 )]
 position = Vector2( 0, -6.5 )
 scale = Vector2( 1, 1 )
 collision_layer = 8
 collision_mask = 64
 
-[node name="Sprite" type="AnimatedSprite" parent="Body/AnimatedSprite/Hold_position"]
+[node name="Sprite" type="AnimatedSprite" parent="Body/Hold_position"]
 position = Vector2( 15, 0 )
 frames = SubResource( 71 )
-animation = "Orc_Swing"
+animation = "Mage_Swing"
+
+[node name="FireballSpawnPoint" type="Position2D" parent="Body/Hold_position/Sprite"]
+position = Vector2( 28.7631, 2.98154 )
 
 [node name="Player_hurtBox" parent="Body" instance=ExtResource( 8 )]
 collision_layer = 4
@@ -2047,5 +2051,5 @@ limit_left = 0
 limit_top = 0
 limit_right = 512
 limit_bottom = 300
-[connection signal="animation_finished" from="Body/AnimatedSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="Body/CharacterSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Body/Player_hurtBox" to="." method="_on_Player_hurtBox_area_entered"]

@@ -102,6 +102,7 @@ Interact={
 2d_physics/layer_7="EnemyHurtbox"
 2d_physics/layer_8="Traps"
 2d_physics/layer_9="Interactables"
+2d_physics/layer_10="Fireball"
 
 [rendering]
 

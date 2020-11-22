@@ -48,3 +48,4 @@ func _unhandled_input(event):
 				parent.animation_player.play("Ogre_Attack")
 			"Mage":
 				parent.animation_player.play("Mage_Attack")
+				parent.shoot()

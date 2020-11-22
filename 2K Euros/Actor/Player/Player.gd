@@ -2,15 +2,17 @@ extends KinematicBody2D
 
 # we can just call it with or stats
 
+onready var fireball_scn = preload("res://Actor/Fireball/Fireball.tscn")
+
 var move_vector
 var Velocity=Vector2()
 var current_animation = ""
 var attacking = false
-var groupname="Mage"
+var groupname="Ogre"
 var previous_group_name=null
-#cast variables
-onready var Body:Node2D=get_node("Body")
-onready var weapon_position = $Body/AnimatedSprite/Hold_position
+onready var character_sprite = $Body/CharacterSprite
+onready var weapon_position = $Body/Hold_position
+onready var fireball_spawn_point = $Body/Hold_position/Sprite/FireballSpawnPoint
 
 
 #stats
@@ -22,11 +24,11 @@ var stats={
 
 var player_interactables = []
 
-onready var animation_player:AnimationPlayer=get_node("Body/AnimatedSprite/AnimationPlayer")
+onready var animation_player:AnimationPlayer=get_node("Body/CharacterSprite/AnimationPlayer")
 
 
 func _ready():
-	current_animation = "Idle"	
+	current_animation = "Idle"
 	animation_player.play(groupname + "_" + current_animation)
 
 
@@ -48,7 +50,7 @@ func apply_movement():
 
 func flip_character(movement):
 	if movement.x != 0:
-		Body.scale.x= movement.x
+		character_sprite.scale.x = movement.x
 
 
 func getting_damaged(area):
@@ -68,8 +70,11 @@ func rotate_aim():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	print(anim_name)
 	if anim_name in ["Cat_Attack", "Ogre_Attack", "Mage_Attack"]:
 		animation_player.play(groupname + "_" + current_animation)
-		
-	pass # Replace with function body.
+
+
+func shoot():
+	var fireball = fireball_scn.instance()
+	fireball.start(fireball_spawn_point.global_position, weapon_position.rotation)
+	get_tree().root.add_child(fireball)
