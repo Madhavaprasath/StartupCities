@@ -6,6 +6,7 @@ const accerlation=200
 enum {
 	Idle,
 	wander,
+	Chase,
 	attack
 }
 var stats={
@@ -20,23 +21,25 @@ onready var Attack_Zone :Area2D=get_node("PlayerActtack Zone")
 onready var Wander_controller:Node2D=get_node("WanderControler")
 onready var Body:Node2D=get_node("Body")
 onready var animation_player:AnimationPlayer=get_node("Body/AnimationPlayer")
+onready var player_detect_zone:Area2D=get_node("Playerdetect_area")
 var state=Idle
 func _ready():
 	randomize()
 func _physics_process(delta):
-	print(state)
 	flip_character()
 	match state:
 		Idle:
 			velocity=velocity.move_toward(Vector2.ZERO,accerlation*delta)
-			seek_player()
+			check_attack_player()
+			check_chase_player()
 			if wanderable==true:
 				if Wander_controller.check_for_timer()==0:
 					state=shuffle_array([Idle,wander])
 					Wander_controller.set_duration(rand_range(1,3))
 		wander:
 			if wanderable==true:
-				seek_player()
+				check_attack_player()
+				check_chase_player()
 				if Wander_controller.check_for_timer()==0:
 					state=shuffle_array([Idle,wander])
 					Wander_controller.set_duration(rand_range(1,3))
@@ -48,7 +51,16 @@ func _physics_process(delta):
 				if global_position.distance_to(Wander_controller.target_position)<=4:
 					state=shuffle_array([Idle,wander])
 					Wander_controller.set_duration(rand_range(1,3))
+		Chase:
+			check_attack_player()
+			var player=player_detect_zone.player
+			if player!=null:
+				var direction=(global_position.direction_to(player.global_position)).normalized()
+				velocity=velocity.move_toward(direction*stats["Speed"],accerlation*delta)
+			else:
+				state=shuffle_array([Idle,wander])
 		attack:
+			check_chase_player()
 			var player=Attack_Zone.player
 			print(player)
 			if player!=null:
@@ -57,9 +69,12 @@ func _physics_process(delta):
 				state=shuffle_array([Idle,wander])
 	velocity=move_and_slide(velocity)
 	animation(velocity)
-func seek_player():
+func check_attack_player():
 	if Attack_Zone.check_player()==true:
 		state=attack
+func check_chase_player():
+	if player_detect_zone.get_player()==true:
+		state=Chase
 func shuffle_array(arrays):
 	arrays.shuffle()
 	return arrays.pop_front()
