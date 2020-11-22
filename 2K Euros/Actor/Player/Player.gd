@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+class_name Player
 # we can just call it with or stats
 
 onready var fireball_scn = preload("res://Actor/Fireball/Fireball.tscn")
@@ -17,6 +17,10 @@ onready var camera_handler = $CameraHandler
 onready var camera = $Camera2D
 
 
+# tests
+var group_index = 2
+var morph_list = ["Ogre", "Cat", "Mage", "Player"]
+
 #stats
 var stats={
 	"health":100,
@@ -25,6 +29,7 @@ var stats={
 }
 
 var player_interactables = []
+var player_obstacles = []
 
 onready var animation_player:AnimationPlayer=get_node("Body/CharacterSprite/AnimationPlayer")
 
@@ -47,7 +52,21 @@ func apply_movement():
 		var interactable = player_interactables[0]
 		interactable.trigger()
 	
+	var morph = Input.is_action_just_pressed("ui_accept")
+	if morph:
+		group_index += 1
+		if group_index > 3: 
+			group_index = 0
+			
+		morph_to(morph_list[group_index])
+	
 	return Vector2(x, y)
+
+
+func morph_to(new_group):
+	groupname = new_group
+	current_animation = "Idle"
+	animation_player.play(groupname + "_" + current_animation)
 
 
 func flip_character(movement):
@@ -87,5 +106,22 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func shoot():
 	var fireball = fireball_scn.instance()
-	fireball.start(fireball_spawn_point.global_position, weapon_position.rotation)
+	fireball.start(fireball_spawn_point.global_position, weapon_position.rotation, true)
 	get_tree().root.add_child(fireball)
+
+
+func smash():
+	if player_obstacles.size() > 0:
+		player_obstacles[0].smash()
+
+func _on_Hammer_body_entered(body):
+	if body is Rocks and groupname == "Ogre":
+		print("added rocks")
+		player_obstacles.append(body)
+	pass # Replace with function body.
+
+
+func _on_Hammer_body_exited(body):
+	if body is Rocks:
+		player_obstacles.clear()
+	pass # Replace with function body.
