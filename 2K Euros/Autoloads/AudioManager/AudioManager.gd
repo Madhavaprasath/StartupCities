@@ -13,30 +13,30 @@ func _ready():
 func change_state(new_state):
 	state = new_state
 	
-	$Tween.stop_all()
-	var audio_to_play: AudioStreamPlayer
-	
-	match new_state:
-		"menu":
-			audio_to_play = $BGMS/MainMenu
-		"stage":
-			audio_to_play = $BGMS/Stage
-		"end":
-			audio_to_play = $BGMS/End
-		"none":
-			fade_current()
-			return
-
-	for child in $BGMS.get_children():
-		if child != audio_to_play:
-			_set_fade_out(child) 
-	$Tween.start() # Actually starts fading out
-	
-	if audio_to_play:
-		if audio_to_play.is_playing():
-			return
-		else:
-			audio_to_play.play()
+#	$Tween.stop_all()
+#	var audio_to_play: AudioStreamPlayer
+#
+#	match new_state:
+#		"menu":
+#			audio_to_play = $BGMS/MainMenu
+#		"stage":
+#			audio_to_play = $BGMS/Stage
+#		"end":
+#			audio_to_play = $BGMS/End
+#		"none":
+#			fade_current()
+#			return
+#
+#	for child in $BGMS.get_children():
+#		if child != audio_to_play:
+#			_set_fade_out(child) 
+#	$Tween.start() # Actually starts fading out
+#
+#	if audio_to_play:
+#		if audio_to_play.is_playing():
+#			return
+#		else:
+#			audio_to_play.play()
 
 
 func fade_current():

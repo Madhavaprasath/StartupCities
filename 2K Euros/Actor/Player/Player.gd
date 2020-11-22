@@ -6,7 +6,7 @@ var move_vector
 var Velocity=Vector2()
 var current_animation = ""
 var attacking = false
-var groupname="Cat"
+var groupname="Mage"
 var previous_group_name=null
 #cast variables
 onready var Body:Node2D=get_node("Body")
@@ -68,7 +68,8 @@ func rotate_aim():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
+	print(anim_name)
 	if anim_name in ["Cat_Attack", "Ogre_Attack", "Mage_Attack"]:
 		animation_player.play(groupname + "_" + current_animation)
-		attacking = false
+		
 	pass # Replace with function body.

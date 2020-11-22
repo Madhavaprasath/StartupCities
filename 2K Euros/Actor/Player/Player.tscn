@@ -231,14 +231,14 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=42]
-radius = 6.12173
-height = 10.1291
+radius = 8.224
+height = 13.0197
 
 [sub_resource type="CircleShape2D" id=43]
-radius = 7.783
+radius = 7.70912
 
 [sub_resource type="CircleShape2D" id=44]
-radius = 7.77677
+radius = 12.2025
 
 [sub_resource type="Animation" id=45]
 length = 0.45
@@ -762,7 +762,7 @@ tracks/4/path = NodePath("Hold_position/Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -862,7 +862,7 @@ tracks/0/path = NodePath("Hold_position/Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1034,7 +1034,7 @@ tracks/3/path = NodePath("Hold_position/Sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1127,6 +1127,7 @@ tracks/10/keys = {
 }
 
 [sub_resource type="Animation" id=51]
+resource_name = "Ogre_Attack"
 length = 0.45
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -1181,7 +1182,7 @@ tracks/4/path = NodePath("Hold_position/Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1310,6 +1311,7 @@ tracks/14/keys = {
 }
 
 [sub_resource type="Animation" id=52]
+resource_name = "Ogre_Idle"
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -1341,7 +1343,7 @@ tracks/2/path = NodePath("Hold_position/Sprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1446,6 +1448,7 @@ tracks/10/keys = {
 }
 
 [sub_resource type="Animation" id=53]
+resource_name = "Ogre_Run"
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -1501,7 +1504,7 @@ tracks/4/path = NodePath("Hold_position/Sprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1673,7 +1676,7 @@ tracks/7/path = NodePath("Hold_position/Sprite:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1821,7 +1824,7 @@ tracks/7/path = NodePath("Hold_position/Sprite:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1942,7 +1945,7 @@ animations = [ {
 "frames": [ SubResource( 56 ) ],
 "loop": true,
 "name": "Cat_Idle",
-"speed": 5.02
+"speed": 5.0
 }, {
 "frames": [  ],
 "loop": true,
@@ -1987,7 +1990,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body"]
 frames = SubResource( 41 )
-animation = "Cat_attack"
+animation = "Org_attack"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/AnimatedSprite"]
 anims/Cat_Attack = SubResource( 45 )
@@ -1996,9 +1999,9 @@ anims/Cat_Run = SubResource( 47 )
 anims/Mage_Attack = SubResource( 48 )
 anims/Mage_Idle = SubResource( 49 )
 anims/Mage_Run = SubResource( 50 )
-anims/Org_Attack = SubResource( 51 )
-anims/Org_Idle = SubResource( 52 )
-anims/Org_Run = SubResource( 53 )
+anims/Ogre_Attack = SubResource( 51 )
+anims/Ogre_Idle = SubResource( 52 )
+anims/Ogre_Run = SubResource( 53 )
 anims/Player_Idle = SubResource( 54 )
 anims/Player_Run = SubResource( 55 )
 
@@ -2012,9 +2015,9 @@ collision_layer = 8
 collision_mask = 64
 
 [node name="Sprite" type="AnimatedSprite" parent="Body/AnimatedSprite/Hold_position"]
-position = Vector2( 15, 6.5 )
+position = Vector2( 15, 0 )
 frames = SubResource( 71 )
-animation = "Cat_swing"
+animation = "Orc_Swing"
 
 [node name="Player_hurtBox" parent="Body" instance=ExtResource( 8 )]
 collision_layer = 4
@@ -2022,7 +2025,7 @@ collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( -1.17982, 8.39046 )
+position = Vector2( 0.147476, 8.25891 )
 shape = SubResource( 43 )
 
 [node name="Statemachine" type="Node" parent="."]

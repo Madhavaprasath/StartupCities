@@ -33,36 +33,18 @@ func transition(delta):
 				parent.current_animation = "Idle"
 				return states[1]
 	return null
-	
+
+
 func animation(state):
-	match state:
-		"Idle":
-			if parent.groupname=="Player":
-				parent.animation_player.play("Player_Idle")
-			elif parent.groupname=="Cat":
-				parent.animation_player.play("Cat_Idle")
-			elif parent.groupname=="Org":
-				parent.animation_player.play("Org_Idle")
-			else:
-				parent.animation_player.play("Mage_Idle")
-		"Run":
-			if parent.groupname=="Player":
-				parent.animation_player.play("Player_Run")
-			elif parent.groupname=="Cat":
-				parent.animation_player.play("Cat_Run")
-			elif parent.groupname=="Org":
-				parent.animation_player.play("Org_Run")
-			else:
-				parent.animation_player.play("Mage_Run")
+	parent.animation_player.play(parent.groupname + "_" + state)
+
+
 func _unhandled_input(event):
-	if event.is_action_pressed("click") and parent.attacking==false:
-		parent.attacking = true
-		if parent.groupname=="Cat"||parent.groupname=="Org"&&parent.groupname!="Player":
-			match parent.groupname:
-				"Cat":
-					parent.animation_player.play("Cat_Attack")
-				"Org":
-					parent.animation_player.play("Org_Attack")
-		elif parent.groupname=="Mage":
-			parent.animation_player.play("Mage_Attack")
-			
+	if event.is_action_pressed("click"):
+		match parent.groupname:
+			"Cat":
+				parent.animation_player.play("Cat_Attack")
+			"Ogre":
+				parent.animation_player.play("Ogre_Attack")
+			"Mage":
+				parent.animation_player.play("Mage_Attack")
