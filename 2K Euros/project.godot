@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Fireball",
+"language": "GDScript",
+"path": "res://Actor/Fireball/Fireball.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Actor/Player/Player.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Vines",
+"language": "GDScript",
+"path": "res://Stages/Obstacles/Vines/Vines.gd"
+} ]
 _global_script_class_icons={
-
+"Fireball": "",
+"Player": "",
+"Vines": ""
 }
 
 [application]
