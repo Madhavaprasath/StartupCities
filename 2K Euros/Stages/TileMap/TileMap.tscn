@@ -4,35 +4,6 @@
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-<<<<<<< Updated upstream
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 32, 32, 17.0942, 32, 17.0942, 0.123138, 32, 0.0660553 )
-
-[sub_resource type="ConvexPolygonShape2D" id=5]
-points = PoolVector2Array( 0, 26.0982, 14.9886, 26.0982, 14.9886, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 32, 32, 16.9857, 32, 16.9316, 26.0982, 32, 26.0441 )
-
-[sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 14.9886, 32, 0, 32, 0, 0, 14.9237, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 32, 32, 17.0114, 32, 17.0655, 0, 32, 0.131493 )
-
-[sub_resource type="ConvexPolygonShape2D" id=10]
-points = PoolVector2Array( 14.9083, 0, 14.9624, 24.9492, 32, 25.0033, 32, 32, 0, 32, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=11]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 25.049, 32, 24.9408 )
-=======
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -60,17 +31,10 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 24.9792, 32, 24.7923 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 17.0916, 0, 32, 0, 32, 32, 0, 32, 0, 24.9753, 17.0375, 24.9888 )
->>>>>>> Stashed changes
 
 [sub_resource type="ConvexPolygonShape2D" id=12]
-points = PoolVector2Array( 17.0655, 0, 31.8315, 0.00115967, 32, 32, 0, 32, 0, 24.9357, 17.0655, 24.9897 )
+points = PoolVector2Array( 0, 0, 14.8988, 0, 15.0109, 32, 0, 32 )
 
-<<<<<<< Updated upstream
-[sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
-
-=======
->>>>>>> Stashed changes
 [sub_resource type="TileSet" id=1]
 0/name = "tiles_32x32.png 0"
 0/texture = ExtResource( 1 )
@@ -124,22 +88,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-2/shape = SubResource( 7 )
-=======
 2/shape = SubResource( 4 )
->>>>>>> Stashed changes
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-<<<<<<< Updated upstream
-"shape": SubResource( 7 ),
-=======
 "shape": SubResource( 4 ),
->>>>>>> Stashed changes
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -153,22 +109,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-3/shape = SubResource( 8 )
-=======
 3/shape = SubResource( 5 )
->>>>>>> Stashed changes
 3/shape_one_way = false
 3/shape_one_way_margin = 1.0
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-<<<<<<< Updated upstream
-"shape": SubResource( 8 ),
-=======
 "shape": SubResource( 5 ),
->>>>>>> Stashed changes
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 3/z_index = 0
@@ -196,22 +144,9 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-5/shape = SubResource( 9 )
-5/shape_one_way = false
-5/shape_one_way_margin = 1.0
-5/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 9 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-=======
 5/shape_one_way = false
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
->>>>>>> Stashed changes
 5/z_index = 0
 6/name = "tiles_32x32.png 6"
 6/texture = ExtResource( 1 )
@@ -223,22 +158,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-6/shape = SubResource( 10 )
-=======
 6/shape = SubResource( 6 )
->>>>>>> Stashed changes
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-<<<<<<< Updated upstream
-"shape": SubResource( 10 ),
-=======
 "shape": SubResource( 6 ),
->>>>>>> Stashed changes
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
@@ -252,22 +179,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-7/shape = SubResource( 11 )
-=======
 7/shape = SubResource( 7 )
->>>>>>> Stashed changes
 7/shape_one_way = false
 7/shape_one_way_margin = 1.0
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-<<<<<<< Updated upstream
-"shape": SubResource( 11 ),
-=======
 "shape": SubResource( 7 ),
->>>>>>> Stashed changes
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
@@ -281,22 +200,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-8/shape = SubResource( 12 )
-=======
 8/shape = SubResource( 8 )
->>>>>>> Stashed changes
 8/shape_one_way = false
 8/shape_one_way_margin = 1.0
 8/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-<<<<<<< Updated upstream
-"shape": SubResource( 12 ),
-=======
 "shape": SubResource( 8 ),
->>>>>>> Stashed changes
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 8/z_index = 0
@@ -310,14 +221,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 9/navigation_offset = Vector2( 0, 0 )
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-9/shape = SubResource( 13 )
+9/shape = SubResource( 12 )
 9/shape_one_way = false
 9/shape_one_way_margin = 1.0
 9/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 9/z_index = 0
@@ -331,22 +242,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 10/navigation_offset = Vector2( 0, 0 )
 10/shape_offset = Vector2( 0, 0 )
 10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-10/shape = SubResource( 4 )
-=======
 10/shape = SubResource( 9 )
->>>>>>> Stashed changes
 10/shape_one_way = false
 10/shape_one_way_margin = 1.0
 10/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-<<<<<<< Updated upstream
-"shape": SubResource( 4 ),
-=======
 "shape": SubResource( 9 ),
->>>>>>> Stashed changes
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 10/z_index = 0
@@ -374,22 +277,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 12/navigation_offset = Vector2( 0, 0 )
 12/shape_offset = Vector2( 0, 0 )
 12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-12/shape = SubResource( 5 )
-=======
 12/shape = SubResource( 10 )
->>>>>>> Stashed changes
 12/shape_one_way = false
 12/shape_one_way_margin = 1.0
 12/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-<<<<<<< Updated upstream
-"shape": SubResource( 5 ),
-=======
 "shape": SubResource( 10 ),
->>>>>>> Stashed changes
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 12/z_index = 0
@@ -403,22 +298,14 @@ points = PoolVector2Array( 0, 0, 14.9288, 0, 15.041, 32, 0, 32 )
 13/navigation_offset = Vector2( 0, 0 )
 13/shape_offset = Vector2( 0, 0 )
 13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-<<<<<<< Updated upstream
-13/shape = SubResource( 6 )
-=======
 13/shape = SubResource( 11 )
->>>>>>> Stashed changes
 13/shape_one_way = false
 13/shape_one_way_margin = 1.0
 13/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-<<<<<<< Updated upstream
-"shape": SubResource( 6 ),
-=======
 "shape": SubResource( 11 ),
->>>>>>> Stashed changes
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 13/z_index = 0

@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Player
+
 # we can just call it with or stats
 
 onready var fireball_scn = preload("res://Actor/Fireball/Fireball.tscn")
@@ -87,5 +87,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func shoot():
 	var fireball = fireball_scn.instance()
-	fireball.start(fireball_spawn_point.global_position, weapon_position.rotation, true)
+	fireball.start(fireball_spawn_point.global_position, weapon_position.rotation)
 	get_tree().root.add_child(fireball)
