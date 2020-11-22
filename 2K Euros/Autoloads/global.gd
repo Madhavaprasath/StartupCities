@@ -5,7 +5,7 @@ extends Node
 var coins = 0
 var collected_keys = []
 var stage_scns = {
-	"stage1": "res://Stages/Stage2/Stage1.tscn",
+	"stage1": "res://Stages/Stage1/Stage1.tscn",
 	"stage2": "res://Stages/Stage2/Stage2.tscn"
 }
 

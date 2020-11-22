@@ -7,8 +7,9 @@
 extents = Vector2( 8, 12 )
 
 [node name="Key" type="Area2D"]
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
+collectible = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
