@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Temp/dungeon_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Misc/door_32x32.png" type="Texture" id=1]
 [ext_resource path="res://Stages/Interactables/Door/Door.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16.0515, 14.0281 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "open"
@@ -22,7 +23,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[node name="Door" type="Area2D"]
+[sub_resource type="CircleShape2D" id=4]
+radius = 20.0
+
+[node name="Door" type="StaticBody2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -30,13 +34,10 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-hframes = 4
-region_enabled = true
 region_rect = Rect2( 64, 112, 64, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/open = SubResource( 2 )
@@ -54,6 +55,11 @@ text = "PLEASE FIND THE KEY!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_Door_body_exited"]
+
+[node name="Trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+shape = SubResource( 4 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Trigger" to="." method="_on_Trigger_body_entered"]
+[connection signal="body_exited" from="Trigger" to="." method="_on_Trigger_body_exited"]

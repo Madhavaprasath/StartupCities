@@ -1,7 +1,8 @@
-extends Area2D
+extends StaticBody2D
 
 export(String) var id
 export(bool) var open
+export(bool) var is_next_stage
 
 onready var sprite = $Sprite
 onready var hint = $Hint
@@ -20,7 +21,15 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _on_Door_body_entered(body):
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if is_next_stage:
+		Global.navigate_to_next_stage(id)
+	else:
+		queue_free()
+	pass # Replace with function body.
+
+
+func _on_Trigger_body_entered(body):
 	print("door enter: ", body.name)
 	if body.name == "Player":
 		if Global.collected_keys.find(id) > -1:
@@ -30,12 +39,6 @@ func _on_Door_body_entered(body):
 	pass # Replace with function body.
 
 
-func _on_Door_body_exited(body):
-	print("door exit: ", body.name)
+func _on_Trigger_body_exited(body):
 	hint.hide()
-	pass # Replace with function body.
-
-
-func _on_AnimationPlayer_animation_finished(anim_name):
-	Global.navigate_to_next_stage(id)
 	pass # Replace with function body.

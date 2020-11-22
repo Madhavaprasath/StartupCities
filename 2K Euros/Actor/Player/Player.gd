@@ -8,7 +8,7 @@ var move_vector
 var Velocity=Vector2()
 var current_animation = ""
 var attacking = false
-var groupname="Ogre"
+var groupname="Player"
 var previous_group_name=null
 var can_move = false
 onready var character_sprite = $Body/CharacterSprite
@@ -24,16 +24,18 @@ var morph_list = ["Ogre", "Cat", "Mage", "Player"]
 
 #stats
 var health=100
-var move_speed=150
+var move_speed=250
 var damage=150
 
 var player_interactables = []
 var player_obstacles = []
+var player_morphable
 
 onready var animation_player:AnimationPlayer=get_node("Body/CharacterSprite/AnimationPlayer")
 
 
 func _ready():
+	EventManager.connect("morph", self, "_on_morph")
 	current_animation = "Idle"
 	animation_player.play(groupname + "_" + current_animation)
 
@@ -46,25 +48,26 @@ func apply_movement():
 	Velocity=move_and_slide(Velocity,Vector2.UP)
 	
 	var interact = Input.is_action_just_pressed("Interact")
-	if interact and player_interactables.size() > 0 :
+	if interact and player_interactables.size() > 0:
 		var interactable = player_interactables[0]
 		interactable.trigger()
 	
-	var morph = Input.is_action_just_pressed("ui_accept")
-	if morph:
-		group_index += 1
-		if group_index > 3: 
-			group_index = 0
-			
-		morph_to(morph_list[group_index])
+	var morph = Input.is_action_just_pressed("Morph")
+	if morph and player_morphable:
+		player_morphable.attack()
 	
 	return Vector2(x, y)
 
 
-func morph_to(new_group):
-	groupname = new_group
+func _on_morph(mob):
+	groupname = mob
 	current_animation = "Idle"
 	animation_player.play(groupname + "_" + current_animation)
+	
+	if mob == "Cat":
+		weapon_position.visible = false
+	else:
+		weapon_position.visible = true
 
 
 func flip_character(movement):
@@ -111,9 +114,15 @@ func smash():
 	if player_obstacles.size() > 0:
 		player_obstacles[0].smash()
 
+
+func go_to_hole():
+	if player_interactables.size() > 0:
+		var hole = get_parent().find_node("Interactables").find_node(player_interactables[0].next_hole)
+		position = hole.position
+
+
 func _on_Hammer_body_entered(body):
 	if body is Rocks and groupname == "Ogre":
-		print("added rocks")
 		player_obstacles.append(body)
 	pass # Replace with function body.
 

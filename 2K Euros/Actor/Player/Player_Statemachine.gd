@@ -38,6 +38,7 @@ func transition(delta):
 				return states[1]
 	return null
 
+
 func animation(state):
 	parent.animation_player.play(parent.groupname + "_" + state)
 
@@ -46,7 +47,8 @@ func _unhandled_input(event):
 	if event.is_action_pressed("click"):
 		match parent.groupname:
 			"Cat":
-				parent.animation_player.play("Cat_Attack")
+				parent.character_sprite.play("Cat_Shrink")
+				parent.go_to_hole()
 			"Ogre":
 				parent.animation_player.play("Ogre_Attack")
 				parent.smash()
