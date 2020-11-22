@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="2K Euros"
-run/main_scene="res://Stages/Stage1/Stage1.tscn"
+run/main_scene="res://Scenes/Mainmaenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -52,6 +52,7 @@ EventManager="*res://Autoloads/event_manager.gd"
 
 window/size/width=512
 window/size/height=320
+window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
