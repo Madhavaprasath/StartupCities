@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Audios/BGM/Pianissimo.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audios/BGM/Elegy_intro_alt.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Audios/BGM/Dungeon.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Audios/BGM/Untz.wav" type="AudioStream" id=3]
 [ext_resource path="res://Autoloads/AudioManager/AudioManager.gd" type="Script" id=4]
