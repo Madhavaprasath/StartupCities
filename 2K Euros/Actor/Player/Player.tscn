@@ -231,8 +231,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=42]
-radius = 6.12173
-height = 10.1291
+radius = 9.67925
+height = 13.0197
 
 [sub_resource type="CircleShape2D" id=43]
 radius = 7.70912
@@ -1262,31 +1262,31 @@ tracks/10/keys = {
 "values": [ Vector2( -2.50281, 3.90591 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:disabled")
+tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 0.152196, 0.300933, 0.303239 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true, false, true, true ]
+"values": [ SubResource( 42 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:radius")
+tracks/12/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:disabled")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 8.224 ]
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:height")
+tracks/13/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:radius")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1295,7 +1295,7 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 13.0197 ]
+"values": [ 9.67925 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:position")
@@ -1307,7 +1307,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 33.504, 3 ) ]
+"values": [ Vector2( 36.4963, 3 ) ]
 }
 
 [sub_resource type="Animation" id=52]
@@ -1980,7 +1980,6 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 16, 16 )
-
 [node name="Player" type="KinematicBody2D" groups=[
 "Players",
 ]]
@@ -2015,10 +2014,15 @@ position = Vector2( 0, -6.5 )
 collision_layer = 8
 collision_mask = 64
 
+[node name="CollisionShape2D" parent="Body/Hold_position/Player_hitbox" index="0"]
+position = Vector2( 36.4963, 3 )
+shape = SubResource( 42 )
+disabled = true
+
 [node name="Sprite" type="AnimatedSprite" parent="Body/Hold_position"]
 position = Vector2( 15, 0 )
 frames = SubResource( 71 )
-animation = "Mage_Swing"
+animation = "Orc_Swing"
 
 [node name="FireballSpawnPoint" type="Position2D" parent="Body/Hold_position/Sprite"]
 position = Vector2( 28.7631, 2.98154 )
@@ -2058,3 +2062,5 @@ position = Vector2( -16, -16 )
 shape = SubResource( 101 )
 [connection signal="animation_finished" from="Body/CharacterSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Body/Player_hurtBox" to="." method="_on_Player_hurtBox_area_entered"]
+
+[editable path="Body/Hold_position/Player_hitbox"]
