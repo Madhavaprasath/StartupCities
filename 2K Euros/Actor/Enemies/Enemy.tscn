@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
+[ext_resource path="res://Actor/Enemies/Playerdetect_area.gd" type="Script" id=1]
 [ext_resource path="res://Actor/Enemies/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Actor/Enemies/WanderControler.gd" type="Script" id=3]
 [ext_resource path="res://Actor/Enemies/PlayerDetectionZone.gd" type="Script" id=4]
@@ -71,6 +72,9 @@ extents = Vector2( 29.4341, 30.1698 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10.067, 15.069 )
 
+[sub_resource type="CircleShape2D" id=6]
+radius = 64.8116
+
 [node name="Enemy" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
@@ -93,6 +97,7 @@ shape = SubResource( 4 )
 
 [node name="WanderControler" type="Node2D" parent="."]
 script = ExtResource( 3 )
+wader_range = 16
 
 [node name="Timer" type="Timer" parent="WanderControler"]
 one_shot = true
@@ -111,9 +116,19 @@ modulate = Color( 1, 1, 1, 0.658824 )
 
 [node name="CollisionShape2D" parent="EnemyHurtBox" index="0"]
 shape = SubResource( 5 )
+
+[node name="Playerdetect_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playerdetect_area"]
+shape = SubResource( 6 )
 [connection signal="timeout" from="WanderControler/Timer" to="WanderControler" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="PlayerActtack Zone" to="PlayerActtack Zone" method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="PlayerActtack Zone" to="PlayerActtack Zone" method="_on_PlayerDetectionZone_body_exited"]
+[connection signal="body_entered" from="Playerdetect_area" to="Playerdetect_area" method="_on_Playerdetect_area_body_entered"]
+[connection signal="body_exited" from="Playerdetect_area" to="Playerdetect_area" method="_on_Playerdetect_area_body_exited"]
 
 [editable path="EnemyHitbox"]
 
