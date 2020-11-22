@@ -1,7 +1,6 @@
 extends Area2D
 
 var player=null
-
 func check_player():
 	return player!=null
 

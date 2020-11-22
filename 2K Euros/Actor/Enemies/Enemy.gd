@@ -16,17 +16,17 @@ var stats={
 }
 var velocity=Vector2()
 export (bool)var wanderable=true
-
 onready var Attack_Zone :Area2D=get_node("PlayerActtack Zone")
 onready var Wander_controller:Node2D=get_node("WanderControler")
 onready var Body:Node2D=get_node("Body")
 onready var animation_player:AnimationPlayer=get_node("Body/AnimationPlayer")
 onready var player_detect_zone:Area2D=get_node("Playerdetect_area")
-var state=Idle
+var state=attack
+var attacking=false
 func _ready():
 	randomize()
+
 func _physics_process(delta):
-	flip_character()
 	match state:
 		Idle:
 			velocity=velocity.move_toward(Vector2.ZERO,accerlation*delta)
@@ -51,24 +51,28 @@ func _physics_process(delta):
 				if global_position.distance_to(Wander_controller.target_position)<=4:
 					state=shuffle_array([Idle,wander])
 					Wander_controller.set_duration(rand_range(1,3))
+
 		Chase:
-			check_attack_player()
-			var player=player_detect_zone.player
-			if player!=null:
-				var direction=(global_position.direction_to(player.global_position)).normalized()
-				velocity=velocity.move_toward(direction*stats["Speed"],accerlation*delta)
-			else:
-				state=shuffle_array([Idle,wander])
+				check_attack_player()
+				var player=player_detect_zone.player
+				if player!=null:
+					var direction=(global_position.direction_to(player.global_position)).normalized()
+					velocity=velocity.move_toward(direction*stats["Speed"],accerlation*delta)
+				else:
+					state=shuffle_array([Idle,wander])
 		attack:
-			check_chase_player()
 			var player=Attack_Zone.player
-			print(player)
 			if player!=null:
-				attack()
-			if player==null:
-				state=shuffle_array([Idle,wander])
+				velocity=Vector2(0,0)
+			else:
+				return
+	
 	velocity=move_and_slide(velocity)
-	animation(velocity)
+	flip_character()
+	animation(state)
+
+
+
 func check_attack_player():
 	if Attack_Zone.check_player()==true:
 		state=attack
@@ -79,17 +83,22 @@ func shuffle_array(arrays):
 	arrays.shuffle()
 	return arrays.pop_front()
 func attack():
-	pass
+	attacking = true
 func flip_character():
-	if velocity.x>0:
-		Body.scale.x=1
-	elif velocity.x<0:
-		Body.scale.x=-1
-func animation(velocity:Vector2):
+		if velocity.x>0:
+			Body.scale.x=1
+			$EnemyHitbox.scale.x=1
+		elif velocity.x<0:
+			Body.scale.x=-1
+			$EnemyHitbox.scale.x=-1
+
+func animation(states):
 	var anim=""
-	if velocity==Vector2.ZERO:
-		anim='Idle'
-	elif velocity!=Vector2.ZERO:
-		anim='Run'
+	if states==Idle:
+		anim="Idle"
+	elif states in [Chase,wander]:
+		anim="Run"
+	elif states==attack:
+		anim="Attack"
 	if animation_player.current_animation !=anim:
 		animation_player.play(anim)

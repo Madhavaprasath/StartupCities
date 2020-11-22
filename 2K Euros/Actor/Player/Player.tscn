@@ -1978,11 +1978,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=73]
+[sub_resource type="CapsuleShape2D" id=72]
 radius = 8.59227
 height = 6.46961
 
-[sub_resource type="RectangleShape2D" id=72]
+[sub_resource type="RectangleShape2D" id=73]
 extents = Vector2( 16, 16 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -2019,6 +2019,11 @@ position = Vector2( 0, -6.5 )
 collision_layer = 8
 collision_mask = 64
 
+[node name="CollisionShape2D" parent="Body/Hold_position/Player_hitbox" index="0"]
+position = Vector2( 33.504, 3 )
+shape = SubResource( 42 )
+disabled = true
+
 [node name="Sprite" type="AnimatedSprite" parent="Body/Hold_position"]
 position = Vector2( 15, 0 )
 frames = SubResource( 71 )
@@ -2034,7 +2039,7 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Hold_position/Sprite/Hammer"]
 position = Vector2( 8.5, 1.75 )
 rotation = 0.816829
-shape = SubResource( 73 )
+shape = SubResource( 72 )
 
 [node name="Player_hurtBox" parent="Body" instance=ExtResource( 8 )]
 collision_layer = 4
@@ -2068,8 +2073,10 @@ limit_bottom = 960
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraHandler"]
 position = Vector2( -16, -16 )
-shape = SubResource( 72 )
+shape = SubResource( 73 )
 [connection signal="animation_finished" from="Body/CharacterSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="Body/Hold_position/Sprite/Hammer" to="." method="_on_Hammer_body_entered"]
 [connection signal="body_exited" from="Body/Hold_position/Sprite/Hammer" to="." method="_on_Hammer_body_exited"]
 [connection signal="area_entered" from="Body/Player_hurtBox" to="." method="_on_Player_hurtBox_area_entered"]
+
+[editable path="Body/Hold_position/Player_hitbox"]
