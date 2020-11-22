@@ -17,6 +17,10 @@ onready var camera_handler = $CameraHandler
 onready var camera = $Camera2D
 
 
+# tests
+var group_index = 2
+var morph_list = ["Ogre", "Cat", "Mage", "Player"]
+
 #stats
 var stats={
 	"health":100,
@@ -47,8 +51,20 @@ func apply_movement():
 		var interactable = player_interactables[0]
 		interactable.trigger()
 	
+	var morph = Input.is_action_just_pressed("ui_accept")
+	if morph:
+		group_index += 1
+		if group_index > 3: 
+			group_index = 0
+			
+		morph_to(morph_list[group_index])
+	
 	return Vector2(x, y)
 
+func morph_to(new_group):
+	groupname = new_group
+	current_animation = "Idle"
+	animation_player.play(groupname + "_" + current_animation)
 
 func flip_character(movement):
 	if movement.x != 0:
@@ -89,3 +105,9 @@ func shoot():
 	var fireball = fireball_scn.instance()
 	fireball.start(fireball_spawn_point.global_position, weapon_position.rotation, true)
 	get_tree().root.add_child(fireball)
+
+
+func _on_Player_hitbox_body_entered(body):
+	if body is Rocks and groupname == "Ogre":
+		pass
+	pass # Replace with function body.
