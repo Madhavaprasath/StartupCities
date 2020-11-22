@@ -1,9 +1,10 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://Stages/Stage1/Stage.gd" type="Script" id=1]
+[ext_resource path="res://Stages/Archive/Stage1/Stage.gd" type="Script" id=1]
 [ext_resource path="res://Stages/Interactables/Door/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Stages/Interactables/Chest/Chest.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Temp/dungeon_sheet.png" type="Texture" id=4]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "dungeon_sheet.png 0"

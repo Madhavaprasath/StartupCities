@@ -20,6 +20,7 @@ func state_logic(delta):
 	var movement = parent.apply_movement()
 	parent.flip_character(movement)
 	parent.rotate_aim()
+	parent.camera_snap()
 
 
 func transition(delta):

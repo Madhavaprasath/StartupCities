@@ -13,12 +13,14 @@ var previous_group_name=null
 onready var character_sprite = $Body/CharacterSprite
 onready var weapon_position = $Body/Hold_position
 onready var fireball_spawn_point = $Body/Hold_position/Sprite/FireballSpawnPoint
+onready var camera_handler = $CameraHandler
+onready var camera = $Camera2D
 
 
 #stats
 var stats={
 	"health":100,
-	"Move_speed":50,
+	"Move_speed":250,
 	"attack_damage":20
 }
 
@@ -51,6 +53,15 @@ func apply_movement():
 func flip_character(movement):
 	if movement.x != 0:
 		character_sprite.scale.x = movement.x
+
+
+func camera_snap():
+	for area in camera_handler.get_overlapping_areas():
+		if area.is_in_group("CAMERA_SNAP"):
+			camera.limit_left = area.position.x
+			camera.limit_right = area.position.x + 512 * area.scale.x
+			camera.limit_top = area.position.y
+			camera.limit_bottom = area.position.y + 320 * area.scale.y
 
 
 func getting_damaged(area):
