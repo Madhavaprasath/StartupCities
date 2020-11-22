@@ -56,6 +56,7 @@ func _physics_process(delta):
 			if player==null:
 				state=shuffle_array([Idle,wander])
 	velocity=move_and_slide(velocity)
+	animation(velocity)
 func seek_player():
 	if Attack_Zone.check_player()==true:
 		state=attack
@@ -69,3 +70,11 @@ func flip_character():
 		Body.scale.x=1
 	elif velocity.x<0:
 		Body.scale.x=-1
+func animation(velocity:Vector2):
+	var anim=""
+	if velocity==Vector2.ZERO:
+		anim='Idle'
+	elif velocity!=Vector2.ZERO:
+		anim='Run'
+	if animation_player.current_animation !=anim:
+		animation_player.play(anim)

@@ -6,14 +6,14 @@
 [ext_resource path="res://Actor/HitboxandHurtboxes/Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actor/HitboxandHurtboxes/HurtBox.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Attack"
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Idle"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:animation")
+tracks/0/path = NodePath("Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ "Idle" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy:frame")
+tracks/1/path = NodePath("Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -37,11 +37,11 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Run"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Enemy:animation")
+tracks/0/path = NodePath("Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -53,7 +53,7 @@ tracks/0/keys = {
 "values": [ "Run" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Enemy:frame")
+tracks/1/path = NodePath("Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -65,11 +65,11 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 13.7379, 15.2322 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 29.4341, 30.1698 )
 
-[sub_resource type="CapsuleShape2D" id=6]
-height = 8.35352
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10.067, 15.069 )
 
 [node name="Enemy" type="KinematicBody2D" groups=[
 "Enemy",
@@ -81,26 +81,15 @@ script = ExtResource( 2 )
 
 [node name="Body" type="Node2D" parent="."]
 
-[node name="Enemy" type="AnimatedSprite" parent="Body"]
-animation = "Run"
-playing = true
+[node name="Sprite" type="AnimatedSprite" parent="Body"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
-anims/Attack = SubResource( 2 )
-anims/Idle = SubResource( 3 )
-anims/Run = SubResource( 4 )
-
-[node name="EnemyHitbox" parent="Body" instance=ExtResource( 5 )]
-
-[node name="EnemyHurtBox" parent="Body" instance=ExtResource( 6 )]
-
-[node name="CollisionShape2D" parent="Body/EnemyHurtBox" index="0"]
-visible = false
-shape = SubResource( 5 )
+anims/Attack = SubResource( 1 )
+anims/Idle = SubResource( 2 )
+anims/Run = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.426178, 1.0256 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="WanderControler" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -115,8 +104,17 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerActtack Zone"]
 modulate = Color( 1, 1, 1, 0.658824 )
+
+[node name="EnemyHitbox" parent="." instance=ExtResource( 5 )]
+
+[node name="EnemyHurtBox" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="EnemyHurtBox" index="0"]
+shape = SubResource( 5 )
 [connection signal="timeout" from="WanderControler/Timer" to="WanderControler" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="PlayerActtack Zone" to="PlayerActtack Zone" method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="PlayerActtack Zone" to="PlayerActtack Zone" method="_on_PlayerDetectionZone_body_exited"]
 
-[editable path="Body/EnemyHurtBox"]
+[editable path="EnemyHitbox"]
+
+[editable path="EnemyHurtBox"]

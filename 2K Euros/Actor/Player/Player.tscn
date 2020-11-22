@@ -12,39 +12,39 @@
 [ext_resource path="res://Assets/Sprites/Mage_36x36.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Ogre_36x36.png" type="Texture" id=11]
 
-[sub_resource type="AtlasTexture" id=72]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=73]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 4 )
 region = Rect2( 36, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=74]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 4 )
 region = Rect2( 72, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=75]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 4 )
 region = Rect2( 108, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=76]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=77]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 4 )
 region = Rect2( 36, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=78]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 4 )
 region = Rect2( 72, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=79]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 4 )
 region = Rect2( 108, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=80]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 36, 36 )
 
@@ -64,11 +64,11 @@ region = Rect2( 108, 0, 36, 36 )
 atlas = ExtResource( 11 )
 region = Rect2( 0, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=81]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 11 )
 region = Rect2( 36, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=82]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 11 )
 region = Rect2( 72, 36, 36, 36 )
 
@@ -84,43 +84,43 @@ region = Rect2( 0, 72, 36, 36 )
 atlas = ExtResource( 4 )
 region = Rect2( 36, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=83]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 4 )
 region = Rect2( 72, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=84]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 4 )
 region = Rect2( 108, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=85]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 10 )
 region = Rect2( 0, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=86]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 10 )
 region = Rect2( 36, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=87]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 10 )
 region = Rect2( 72, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=88]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 10 )
 region = Rect2( 108, 36, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=89]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=90]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 11 )
 region = Rect2( 36, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=91]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 11 )
 region = Rect2( 72, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=92]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 11 )
 region = Rect2( 108, 72, 36, 36 )
 
@@ -144,67 +144,67 @@ region = Rect2( 108, 0, 36, 36 )
 atlas = ExtResource( 10 )
 region = Rect2( 0, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=93]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 10 )
 region = Rect2( 36, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=94]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 10 )
 region = Rect2( 72, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=95]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 10 )
 region = Rect2( 108, 72, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=96]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 1 )
 region = Rect2( 36, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=97]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 1 )
 region = Rect2( 72, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=98]
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 1 )
 region = Rect2( 108, 0, 36, 36 )
 
-[sub_resource type="AtlasTexture" id=99]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 36, 36 )
 
-[sub_resource type="SpriteFrames" id=100]
+[sub_resource type="SpriteFrames" id=41]
 animations = [ {
-"frames": [ SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Cat_Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "Cat_Run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 80 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "Org_Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 81 ), SubResource( 82 ), SubResource( 16 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "Org_Run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 83 ), SubResource( 84 ) ],
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "Cat_attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
 "name": "Mage_Run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ) ],
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
 "name": "Org_attack",
 "speed": 5.0
@@ -214,25 +214,25 @@ animations = [ {
 "name": "Mage_Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 33 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
 "loop": true,
 "name": "Mage_attack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 96 ), SubResource( 97 ), SubResource( 98 ) ],
+"frames": [ SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
 "loop": true,
 "name": "Player_Run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 99 ) ],
+"frames": [ SubResource( 40 ) ],
 "loop": true,
 "name": "Player_Idle",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=42]
-radius = 9.67925
-height = 13.0197
+radius = 6.12173
+height = 10.1291
 
 [sub_resource type="CircleShape2D" id=43]
 radius = 7.70912
@@ -1262,31 +1262,31 @@ tracks/10/keys = {
 "values": [ Vector2( -2.50281, 3.90591 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape")
+tracks/11/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:disabled")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.152196, 0.300933, 0.303239 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ SubResource( 42 ) ]
+"values": [ true, false, true, true ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:disabled")
+tracks/12/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:radius")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 8.224 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:radius")
+tracks/13/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:shape:height")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1295,7 +1295,7 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 9.67925 ]
+"values": [ 13.0197 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("../Hold_position/Player_hitbox/CollisionShape2D:position")
@@ -1307,7 +1307,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 36.4963, 3 ) ]
+"values": [ Vector2( 33.504, 3 ) ]
 }
 
 [sub_resource type="Animation" id=52]
@@ -1978,8 +1978,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=101]
+[sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 16, 16 )
+
 [node name="Player" type="KinematicBody2D" groups=[
 "Players",
 ]]
@@ -1990,7 +1991,7 @@ script = ExtResource( 2 )
 [node name="Body" type="Node2D" parent="."]
 
 [node name="CharacterSprite" type="AnimatedSprite" parent="Body"]
-frames = SubResource( 100 )
+frames = SubResource( 41 )
 animation = "Mage_attack"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/CharacterSprite"]
@@ -2014,15 +2015,10 @@ position = Vector2( 0, -6.5 )
 collision_layer = 8
 collision_mask = 64
 
-[node name="CollisionShape2D" parent="Body/Hold_position/Player_hitbox" index="0"]
-position = Vector2( 36.4963, 3 )
-shape = SubResource( 42 )
-disabled = true
-
 [node name="Sprite" type="AnimatedSprite" parent="Body/Hold_position"]
 position = Vector2( 15, 0 )
 frames = SubResource( 71 )
-animation = "Orc_Swing"
+animation = "Mage_Swing"
 
 [node name="FireballSpawnPoint" type="Position2D" parent="Body/Hold_position/Sprite"]
 position = Vector2( 28.7631, 2.98154 )
@@ -2059,8 +2055,6 @@ limit_bottom = 960
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraHandler"]
 position = Vector2( -16, -16 )
-shape = SubResource( 101 )
+shape = SubResource( 72 )
 [connection signal="animation_finished" from="Body/CharacterSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="Body/Player_hurtBox" to="." method="_on_Player_hurtBox_area_entered"]
-
-[editable path="Body/Hold_position/Player_hitbox"]

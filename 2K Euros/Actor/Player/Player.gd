@@ -8,7 +8,7 @@ var move_vector
 var Velocity=Vector2()
 var current_animation = ""
 var attacking = false
-var groupname="Mage"
+var groupname="Ogre"
 var previous_group_name=null
 onready var character_sprite = $Body/CharacterSprite
 onready var weapon_position = $Body/Hold_position
