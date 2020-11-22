@@ -38,7 +38,6 @@ func transition(delta):
 				return states[1]
 	return null
 
-
 func animation(state):
 	parent.animation_player.play(parent.groupname + "_" + state)
 
