@@ -76,7 +76,7 @@ radius = 7.81699
 height = 14.638
 
 [sub_resource type="CircleShape2D" id=15]
-radius = 41.0875
+radius = 116.434
 
 [node name="Mage" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -96,8 +96,20 @@ collision_mask = 2
 position = Vector2( 2.25, 0.5 )
 shape = SubResource( 15 )
 
+[node name="Playerdetect_area" parent="." index="4"]
+visible = false
+
+[node name="EnemyHitbox" parent="." index="5"]
+visible = false
+
 [node name="CollisionShape2D" parent="EnemyHitbox" index="0"]
 disabled = true
+
+[node name="EnemyHurtBox" parent="." index="6"]
+visible = false
+
+[node name="Fireballspwan" type="Position2D" parent="." index="7"]
+position = Vector2( 18.9202, -1.68179 )
 
 [editable path="EnemyHitbox"]
 

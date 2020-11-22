@@ -21,7 +21,7 @@ onready var Wander_controller:Node2D=get_node("WanderControler")
 onready var Body:Node2D=get_node("Body")
 onready var animation_player:AnimationPlayer=get_node("Body/AnimationPlayer")
 onready var player_detect_zone:Area2D=get_node("Playerdetect_area")
-var state=attack
+var state=Idle
 var attacking=false
 func _ready():
 	randomize()
@@ -98,7 +98,5 @@ func animation(states):
 		anim="Idle"
 	elif states in [Chase,wander]:
 		anim="Run"
-	elif states==attack:
-		anim="Attack"
 	if animation_player.current_animation !=anim:
 		animation_player.play(anim)

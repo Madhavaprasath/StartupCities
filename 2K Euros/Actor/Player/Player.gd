@@ -22,11 +22,9 @@ var group_index = 2
 var morph_list = ["Ogre", "Cat", "Mage", "Player"]
 
 #stats
-var stats={
-	"health":100,
-	"Move_speed":250,
-	"attack_damage":20
-}
+var health=100
+var move_speed=10
+var damage=150
 
 var player_interactables = []
 var player_obstacles = []
@@ -38,13 +36,12 @@ func _ready():
 	current_animation = "Idle"
 	animation_player.play(groupname + "_" + current_animation)
 
-
 func apply_movement():
 	var y=-int(Input.is_action_pressed("Up"))+int(Input.is_action_pressed("Down"))
 	var x=int(Input.is_action_pressed("Right"))-int(Input.is_action_pressed("Left"))
 	move_vector=Vector2(x,y)
-	Velocity.x=lerp(Velocity.x,stats["Move_speed"]*move_vector.x,0.1)
-	Velocity.y=lerp(Velocity.y,stats["Move_speed"]*move_vector.y,0.1)
+	Velocity.x=lerp(Velocity.x,move_speed*move_vector.x,0.1)
+	Velocity.y=lerp(Velocity.y,move_speed*move_vector.y,0.1)
 	Velocity=move_and_slide(Velocity,Vector2.UP)
 	
 	var interact = Input.is_action_just_pressed("Interact")
@@ -84,11 +81,9 @@ func camera_snap():
 
 
 func getting_damaged(area):
-	stats["health"]-=area.stats["damage"]
-	if stats["health"]<=0:
-		previous_group_name=groupname
-		groupname=area.groupname
-		stats["health"]=100
+	health-=10
+	if health<=0:
+		pass
 
 
 func _on_Player_hurtBox_area_entered(area):
@@ -125,3 +120,4 @@ func _on_Hammer_body_exited(body):
 	if body is Rocks:
 		player_obstacles.clear()
 	pass # Replace with function body.
+

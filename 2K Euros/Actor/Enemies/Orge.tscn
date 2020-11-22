@@ -21,36 +21,36 @@ atlas = ExtResource( 1 )
 region = Rect2( 108, 0, 36, 36 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 36, 36, 36 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 36, 36, 36, 36 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 72, 36, 36, 36 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 108, 36, 36, 36 )
-
-[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 36, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 36, 36, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 72, 36, 36, 36 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 108, 36, 36, 36 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -61,19 +61,19 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "Run",
+"name": "Attack",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "Attack",
+"name": "Run",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 30.2391, 29.7719 )
 
-[sub_resource type="CircleShape2D" id=14]
+[sub_resource type="CircleShape2D" id=15]
 radius = 64.3195
 
 [sub_resource type="CapsuleShape2D" id=16]
@@ -86,12 +86,15 @@ height = 13.69
 frames = SubResource( 13 )
 animation = "Attack"
 
+[node name="PlayerActtack Zone" parent="." index="3"]
+collision_layer = 0
+collision_mask = 0
+
 [node name="CollisionShape2D" parent="PlayerActtack Zone" index="0"]
-shape = SubResource( 15 )
+shape = SubResource( 14 )
 
 [node name="CollisionShape2D" parent="Playerdetect_area" index="0"]
-visible = false
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [node name="CollisionShape2D" parent="EnemyHitbox" index="0"]
 position = Vector2( 22.8042, 2.12132 )
