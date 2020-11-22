@@ -1,10 +1,12 @@
 extends KinematicBody2D
+class_name Fireball
 
-var parent = ""
+var from_player = ""
 var speed = 150
 var velocity = Vector2()
 
-func start(pos, dir):
+func start(pos, dir, is_player):
+	from_player = is_player
 	$Sprite.scale.x = -1
 	rotation = dir
 	position = pos
@@ -12,4 +14,7 @@ func start(pos, dir):
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
-	# check collision of the enemy
+	if collision:
+		if collision.collider is Vines and from_player:
+			collision.collider.burn()
+		queue_free()
