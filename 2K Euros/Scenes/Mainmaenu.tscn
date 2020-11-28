@@ -8,11 +8,11 @@
 [ext_resource path="res://Assets/Fonts/BitPotionExt.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Assets/Misc/button_80x20.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=1]
 size = 26
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 64
 font_data = ExtResource( 6 )
 
@@ -52,7 +52,7 @@ margin_left = -115.0
 margin_top = -33.0
 margin_right = 196.0
 margin_bottom = 52.9999
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 1 )
 text = "PLAY"
 align = 1
 valign = 1
@@ -76,7 +76,7 @@ margin_left = -115.0
 margin_top = -33.0
 margin_right = 196.0
 margin_bottom = 52.9999
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 1 )
 text = "INSTRUCTION"
 align = 1
 valign = 1
@@ -100,7 +100,7 @@ margin_left = -115.0
 margin_top = -33.0
 margin_right = 196.0
 margin_bottom = 52.9999
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 1 )
 text = "QUIT"
 align = 1
 valign = 1
@@ -113,7 +113,7 @@ margin_left = 105.0
 margin_top = 40.0
 margin_right = 416.0
 margin_bottom = 126.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "SWITCHER"
 align = 1
 valign = 1

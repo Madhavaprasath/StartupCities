@@ -6,7 +6,8 @@ var coins = 0
 var collected_keys = []
 var stage_scns = {
 	"stage1": "res://Stages/Stage1/Stage1.tscn",
-	"stage2": "res://Stages/Stage2/Stage2.tscn"
+	"stage2": "res://Stages/Stage2/Stage2.tscn",
+	"end": "res://Scenes/Endcreadits.tscn"
 }
 
 func navigate_to_next_stage(stage_id):

@@ -51,7 +51,7 @@ tile_data = PoolIntArray( 65520, 0, 0, 65521, 1, 0, 65522, 1, 0, 65523, 1, 0, 65
 
 [node name="Door" parent="Interactables" instance=ExtResource( 7 )]
 position = Vector2( -471, 17.8108 )
-id = "stage1"
+id = "end"
 is_next_stage = true
 
 [node name="Hole" parent="Interactables" instance=ExtResource( 9 )]
@@ -74,6 +74,7 @@ next_hole = "Hole3"
 
 [node name="Key" parent="Collectibles" instance=ExtResource( 2 )]
 position = Vector2( 898, 263.811 )
+is_for = "end"
 
 [node name="Obstacles" type="Node2D" parent="."]
 
